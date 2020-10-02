@@ -23,7 +23,7 @@ function createWindow() {
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: true,//process.env.ELECTRON_NODE_INTEGRATION
+      nodeIntegration: true,
       enableRemoteModule: true
     }
   })
@@ -39,8 +39,6 @@ function createWindow() {
   }
   win.setMenu(null)
   ipcMain.on("request-update-child-property", (event:any, args:ChildProperty)=>{
-    console.log("Receive Request");
-    console.log(args);
     win.webContents.send('update-child-property', args);
   })
   win.on('closed', () => {

@@ -70,7 +70,6 @@ export default class MainWindow extends Vue {
     : `file://${__dirname}/index.html#child`
     win.setMenu(null);
     win.loadURL(path);
-    // win.openDevTools(true);
     win.webContents.on('did-finish-load', ()=>{
       console.log("Send");
       win.webContents.send('child-property',{ childProperty : this.childProperties[this.count], count:this.count+1});

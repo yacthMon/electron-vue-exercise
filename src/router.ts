@@ -11,12 +11,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/child',
     name: 'Child',
-    component: Child//() => import(/* webpackChunkName: "add" */ './components/ChildWindow.vue')
-  },
-  {
-    path: '/a',
-    name: 'Hello',
-    component: HelloWorld
+    component: Child
   },
 ]
 

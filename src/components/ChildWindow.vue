@@ -42,11 +42,9 @@ export default class ChildWindow extends Vue {
   private setChildProperty(childProperty:ChildProperty ):void{
     this.childProperty = childProperty;
     this.divStyle.background = this.childProperty.color;
-    console.log("Child property update");
   }
 
   setMainChildProperty() : void{
-    console.log("Send request");
     ipcRenderer.send("request-update-child-property", {...this.childProperty});
   }
 }
